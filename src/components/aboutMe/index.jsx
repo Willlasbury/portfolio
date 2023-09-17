@@ -1,11 +1,26 @@
-import './styles.css'
+import "./styles.css";
 
-export default function AboutMe () {
-    return (
-        <section>
-        <p>
-            about me
-        </p>
-        </section>
-    )
+import { useState, useEffect } from "react";
+
+import useSWR from "swr";
+
+import getCW from "../../utils/fetch/codewars";
+
+export default function AboutMe({stats}) {
+
+    if (stats) {
+        return(
+            <section>
+                <p>stats</p>
+            </section>
+
+        )
+    }
+    else{
+        return (
+            <section>
+                <p>no stats</p>
+            </section>
+        )
+    }
 }
