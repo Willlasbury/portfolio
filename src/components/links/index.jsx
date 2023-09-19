@@ -8,12 +8,17 @@ export default function () {
     <ul>
         <li>
             <a href='https://github.com/Willlasbury' target='_blank'> 
-                <img src={gitLogo} alt="Github Logo" />
+                <img src={gitLogo} alt="Github logo" />
             </a>
         </li>
         <li>
             <a href='https://www.linkedin.com/in/william-asbury-2613a824b/' target='_blank'> 
-                <img src={LinkLogo} alt='LinkedIn Logo'/>
+                <img src={LinkLogo} alt='LinkedIn logo'/>
+            </a>
+        </li>
+        <li>
+            <a href='https://www.codewars.com/users/Willlasbury' target='_blank'> 
+                <img src='	https://www.codewars.com/packs/assets/logo.f607a0fb.svg' alt='CodeWars logo'/>
             </a>
         </li>
     </ul>
