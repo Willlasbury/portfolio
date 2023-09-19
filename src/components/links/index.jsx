@@ -1,9 +1,9 @@
 import './styles.css'
-import gitLogo from '../../assets/logos/github-mark.png'
+import gitLogo from '../../assets/logos/github-mark-white.png'
 import LinkLogo from '../../assets/logos/LI-In-Bug.png'
 
 
-export default function Nav () {
+export default function () {
     return (
     <ul>
         <li>
