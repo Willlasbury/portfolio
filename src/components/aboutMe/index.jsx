@@ -2,8 +2,6 @@ import "./styles.css";
 
 import { useState, useEffect } from "react";
 
-import useSWR from "swr";
-
 import getCW from "../../utils/fetch/codewars";
 
 export default function AboutMe({stats}) {
