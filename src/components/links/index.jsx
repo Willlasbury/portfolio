@@ -1,7 +1,7 @@
 import "./styles.css";
 import gitLogo from "../../assets/logos/github-mark-white.png";
 import LinkLogo from "../../assets/logos/LI-In-Bug.png";
-import Icon from "../icons";
+import Icon from "./icons";
 
 export default function () {
   return (
