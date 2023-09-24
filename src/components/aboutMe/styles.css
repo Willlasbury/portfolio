@@ -3,7 +3,7 @@
     flex-flow: column;
     align-items: start;
     margin-inline: 1rem;
-    width: 70%;
+    flex-basis: 60%;
 }
 #about_text {
     margin-inline: 0rem;
@@ -15,5 +15,6 @@ h2 {
 
 p {
     text-align: left;
-    color: var(--fourth-color)
+    color: var(--fourth-color);
+    line-height: 1.3;
 }

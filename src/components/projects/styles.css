@@ -1,12 +1,19 @@
-section {
+.project_sec {
     display: flex;
     flex-flow: column;
-    flex: 20;
     margin-inline: 1rem;
+    flex-basis: auto;
 }
 
 #project_list {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     padding: 0rem;
+}
+
+#project_h3 {
+    display: flex;
+    justify-content: flex-start;
+    color: var(--secondary-color);
 }

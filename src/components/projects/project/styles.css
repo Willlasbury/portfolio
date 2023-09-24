@@ -3,3 +3,7 @@ a {
     font-size: smaller;
     color: var(--secondary-color);
 }
+
+a:hover{
+    color: var(--third-color);
+}
