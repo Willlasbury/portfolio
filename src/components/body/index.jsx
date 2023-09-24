@@ -5,7 +5,7 @@ import Projects from "../projects";
 
 export default function ({ projects }) {
   return (
-    <div>
+    <div id="main">
       <AboutMe />
       <Projects projects={projects} />
     </div>
