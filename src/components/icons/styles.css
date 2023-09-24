@@ -1,0 +1,15 @@
+.li_logo {
+    display: flex;
+    list-style-type: none;
+    padding-left: 1rem;
+    align-items: center;
+}
+
+.a_logo {
+    list-style-type: none;
+    height: 1.5rem;
+}
+
+.img_logo {
+    height: 1.5rem;
+}

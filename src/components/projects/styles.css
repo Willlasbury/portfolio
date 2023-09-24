@@ -1,4 +1,12 @@
 section {
     display: flex;
     flex-flow: column;
+    flex: 20;
+    margin-inline: 1rem;
+}
+
+#project_list {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
 }
