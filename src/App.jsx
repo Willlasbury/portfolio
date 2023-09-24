@@ -1,7 +1,6 @@
 import "./App.css";
 import Header from "./components/header";
-import AboutMe from "./components/aboutMe";
-
+import Body from "./components/body"
 import { useEffect, useState } from "react";
 
 import getStats from "./utils/fetch/codewars";
@@ -25,7 +24,7 @@ function App() {
   return (
     <>
       <Header />
-      <AboutMe stats={stats} />
+      <Body projects={projects} />
     </>
   );
 }

@@ -1,8 +1,10 @@
+import './styles.css'
+
 export default function ({ href, src, alt }) {
   return (
-    <li>
-      <a href={href} target="_blank">
-        <img src={src} alt={alt} />
+    <li className="li_logo">
+      <a className="a_logo" href={href} target="_blank">
+        <img className="img_logo" src={src} alt={alt} />
       </a>
     </li>
   );

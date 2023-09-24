@@ -1,8 +1,12 @@
-article {
+#about_me {
     display: flex;
     flex-flow: column;
     align-items: start;
-    margin-inline: 3rem;
+    margin-inline: 1rem;
+    width: 70%;
+}
+#about_text {
+    margin-inline: 0rem;
 }
 
 h2 {

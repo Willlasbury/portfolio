@@ -5,7 +5,7 @@ import Icon from "../icons";
 
 export default function () {
   return (
-    <ul>
+    <ul id="icons">
       <Icon
         href="https://www.codewars.com/users/Willlasbury"
         src="https://www.codewars.com/packs/assets/logo.f607a0fb.svg"

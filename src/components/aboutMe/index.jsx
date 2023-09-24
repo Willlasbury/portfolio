@@ -2,9 +2,9 @@ import "./styles.css";
 
 export default function AboutMe() {
   return (
-    <article>
+    <article id="about_me">
       <h2>Welcome</h2>
-      <section>
+      <section id="about_text">
         <p>
           My name is William Asbury. I am an avid rock climber and programmer. I
           began writing code during college with Fortran77 and IDL. Later on I
