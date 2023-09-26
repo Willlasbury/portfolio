@@ -4,7 +4,8 @@ import filterRepos from "./filterRepos";
 export default async function getFetch() {
   try {
     const url = "https://api.github.com/users/willlasbury/repos";
-    const repos = await fetchRepos(url);
+    const service = 'github'
+    const repos = await fetchRepos(url, service);
     if (repos.message) {
       throw Error(repos.message);
     }

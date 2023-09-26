@@ -1,13 +1,13 @@
-import './styles.css'
+import "./styles.css";
 
 import AboutMe from "../aboutMe";
 import Projects from "../projects";
 
-export default function ({ projects }) {
+export default function ({ loading, projects }) {
   return (
     <div id="main">
       <AboutMe />
-      <Projects projects={projects} />
+      <Projects loading={loading} projects={projects} />
     </div>
   );
 }
