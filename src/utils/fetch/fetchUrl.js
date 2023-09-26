@@ -1,4 +1,4 @@
-export default async function getRepos(url) {
+export default async function getRepos(url, service) {
   try {
     const response = await fetch(url);
     if (response.ok) {
@@ -8,6 +8,6 @@ export default async function getRepos(url) {
       throw console.error();
     }
   } catch (error) {
-    return new Error("Could not access Github at this time", error);
+    return new Error(`Could not access ${service} at this time`, error);
   }
 }
