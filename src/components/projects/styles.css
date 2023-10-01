@@ -1,9 +1,25 @@
-.project_sec {
+/* .project_sec {
     display: flex;
     flex-flow: column;
     margin-inline: 1rem;
     flex-basis: auto;
+} */
+
+.project_sec {
+    display: flex;
+    flex-flow: column;
+    padding: 1rem;
+    color: white;
+    border-width: 3px;
+    border-style: solid;
+    border-image: 
+    linear-gradient(
+      to bottom, 
+      red, 
+      var(--main-color)
+    ) 1 100%;
 }
+
 
 #project_list {
     display: flex;
@@ -14,6 +30,7 @@
 
 #project_h3 {
     display: flex;
+    font-size: larger;
     justify-content: flex-start;
     color: var(--secondary-color);
 }

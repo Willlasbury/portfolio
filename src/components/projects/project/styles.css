@@ -2,6 +2,7 @@ a {
     text-decoration: none;
     font-size: smaller;
     color: var(--secondary-color);
+    padding-bottom: 1rem;
 }
 
 a:hover{
