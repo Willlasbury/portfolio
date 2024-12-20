@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import Link from 'next/link'
 
 const projects = [
   {
@@ -43,7 +42,7 @@ export default function Projects() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Link href={project.link} className="text-blue-500 hover:underline">View Project</Link>
+                <a href={project.link} className="text-blue-500 hover:underline">View Project</a>
               </CardFooter>
             </Card>
           ))}
