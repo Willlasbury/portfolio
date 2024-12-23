@@ -1,20 +1,18 @@
-import { useState } from 'react'
-import Home from "./app/page"
-import getGithub from './utils/getGithub/getGithub'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
 
-import './App.css'
-
-function App() {
-  const testFunc = async () => {
-    const data = await getGithub()
-    console.log("data:", data)
-  }
+export default function App() {
   return (
-    <>
-     {/* <Home/> */}
-     <button onClick={testFunc}>hrere</button>
-    </>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow">
+        <Hero />
+        <Projects />
+      </main>
+      <Footer />
+    </div>
   )
 }
 
-export default App
