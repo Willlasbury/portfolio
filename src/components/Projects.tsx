@@ -1,31 +1,15 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
-const projects = [
-  {
-    title: "Project 1",
-    description: "A brief description of Project 1",
-    technologies: ["React", "Node.js", "MongoDB"],
-    link: "#"
-  },
-  {
-    title: "Project 2",
-    description: "A brief description of Project 2",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    link: "#"
-  },
-  {
-    title: "Project 3",
-    description: "A brief description of Project 3",
-    technologies: ["Vue.js", "Express", "PostgreSQL"],
-    link: "#"
-  }
-]
+type Props = {
+  projects: Object[]
+}
 
-export default function Projects() {
+export default function Projects({projects}: Props) {
+  
   return (
     <section id="projects" className="py-20">
-      <div className="container mx-auto">
+      {/* <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -47,7 +31,7 @@ export default function Projects() {
             </Card>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }

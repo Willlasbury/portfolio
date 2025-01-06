@@ -1,10 +1,6 @@
+import Repository from "@/utils/types/githubReops";
 
-type Repo = {
-  title: string
-  topics: string
-}
-
-export default async function filterRepos(repos: Repo[]) {
+export default async function filterRepos(repos: Repository[]) {
     return repos.filter((repo) => {
      const topics = repo.topics;
      if (topics.includes("portfolio")) {
