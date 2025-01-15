@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
+import getGithub from './utils/api/getGithub/getGithub'
+import { useState, useEffect } from 'react'
+import Repository from './utils/types/githubReops'
 
+export default function App() {
+  const [projects, setProjects] = useState<Array<Repository> | undefined>(undefined);
+
+  useEffect(() => { 
+    getGithub().then((data) => {
+      setProjects(data)
+    })
+
+    
+  }, [])
+
+  const test = () => {
+    console.log("projects:", projects)
+  }
+  
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="min-h-screen flex flex-col">
+      <button onClick={test}>fdsafdsa</button>
+      <Header />
+      <main className="flex-grow">
+        <Hero />
+        {projects && <Projects projects={projects} />}
+      </main>
+      <Footer />
+    </div>
   )
 }
 
-export default App
