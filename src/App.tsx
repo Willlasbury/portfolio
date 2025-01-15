@@ -19,13 +19,13 @@ export default function App() {
     
   }, [])
 
-  // const test = () => {
-  //   console.log("projects:", projects)
-  // }
+  const test = () => {
+    console.log("projects:", projects)
+  }
   
   return (
     <div className="min-h-screen flex flex-col">
-      {/* <button onClick={test}>fdsafdsa</button> */}
+      <button onClick={test}>fdsafdsa</button>
       <Header />
       <main className="flex-grow">
         <Hero />
