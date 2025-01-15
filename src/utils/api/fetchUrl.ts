@@ -1,5 +1,3 @@
-import Repository from "../types/githubReops";
-
 export default async function getRepos(url:string, service:string): Promise<any> {
     try {
       const response = await fetch(url);
@@ -11,7 +9,7 @@ export default async function getRepos(url:string, service:string): Promise<any>
       }
     } catch (error) {
       if (error instanceof Error){
-        alert(`Could not access ${service} at this time: ${error.message}` );
+       return `Could not access ${service} at this time: ${error.message}` 
       }
       throw(error)
        
