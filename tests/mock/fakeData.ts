@@ -1,4 +1,4 @@
-import Repository from "../src/utils/types/githubReops"
+import Repository from "../../src/utils/types/githubReops"
 
 export const gitData: Repository[]  = [{
  allow_forking: true,
