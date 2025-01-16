@@ -1,15 +1,32 @@
 import filterRepos from "./filterRepos";
-import Repository from "@/utils/types/githubReops";
+import Repository from "@/utils/types/githubRepos";
+import getRepoLanguages from "./getRepoLangs";
+
+const token = import.meta.env.GITHUBACCESSTOKEN
 
 export default async function getGithub(): Promise<Array<Repository>> {
   try {
     const url = "https://api.github.com/users/willlasbury/repos";
 
-    const res = await fetch(url);
+    const res = await fetch(url, {
+      method: "GET",
+      headers: {
+        'Authorization': token
+      }
+    });
 
     if (res.ok) {
       const data = await res.json();
-      return filterRepos(data);
+      // filter out repositories that don't have the 'portfolio' tag
+      const repos = filterRepos(data);
+
+      // use the languages_url to attach languages to repo
+      repos.map(async (repo) => {
+        const lang_data = await getRepoLanguages(repo.languages_url, token)
+        repo['languages'] = lang_data
+      })
+
+      return repos
     } else {
       throw new Error(`${res.statusText} ${await res.text()}`);
     }
