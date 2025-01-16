@@ -7,7 +7,12 @@ export default async function getGithub(): Promise<Array<Repository>> {
   try {
     const url = "https://api.github.com/users/willlasbury/repos";
 
-    const res = await fetch(url);
+    const res = await fetch(url, {
+      method: "GET",
+      headers: {
+        'Authorization': `Bearer ${}`
+      }
+    });
 
     if (res.ok) {
       const data = await res.json();
