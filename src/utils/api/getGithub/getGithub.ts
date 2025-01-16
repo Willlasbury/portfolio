@@ -1,5 +1,7 @@
 import filterRepos from "./filterRepos";
-import Repository from "@/utils/types/githubReops";
+import Repository from "@/utils/types/githubRepos";
+import getRepoLanguages from "./getRepoLangs";
+// import RepoLanguages from "@/utils/types/githubRepoLang";
 
 export default async function getGithub(): Promise<Array<Repository>> {
   try {
@@ -9,7 +11,14 @@ export default async function getGithub(): Promise<Array<Repository>> {
 
     if (res.ok) {
       const data = await res.json();
-      return filterRepos(data);
+      // filter out repositories that don't have the 'portfolio' tag
+      const repos = filterRepos(data);
+
+      // use the languages_url to attach languages to repo
+      repos.map(async (repo) => {
+        const lan_data = await getRepoLanguages(repo.languages_url)
+        
+      })
     } else {
       throw new Error(`${res.statusText} ${await res.text()}`);
     }

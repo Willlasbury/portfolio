@@ -6,7 +6,7 @@ import Projects from './components/Projects'
 import Footer from './components/Footer'
 import getGithub from './utils/api/getGithub/getGithub'
 import { useState, useEffect } from 'react'
-import Repository from './utils/types/githubReops'
+import Repository from './utils/types/githubRepos'
 
 export default function App() {
   const [projects, setProjects] = useState<Array<Repository> | undefined>(undefined);

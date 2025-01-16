@@ -1,4 +1,4 @@
-import Repository from "@/utils/types/githubReops";
+import Repository from "@/utils/types/githubRepos";
 
 export default function filterRepos(repos: Repository[]): Repository[] {
     return repos.filter((repo) => {

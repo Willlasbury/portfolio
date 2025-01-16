@@ -1,13 +1,15 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import Repository from "@/utils/types/githubReops"
+import Repository from "@/utils/types/githubRepos"
+import { useEffect } from "react"
+import getRepoLanguages from "@/utils/api/getGithub/getRepoLangs"
 
 type Props = {
   projects: Array<Repository>
 }
 
 export default function Projects({ projects }: Props) {
-
+  
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto">
@@ -21,7 +23,11 @@ export default function Projects({ projects }: Props) {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">{project.language}</Badge>
+                  <p>Languages:</p>
+                  <ul>
+                  {}
+                  <Badge variant="secondary">Badge</Badge>
+                  </ul>
                 </div>
               </CardContent>
               <CardFooter>
