@@ -1,6 +1,6 @@
-import Repository from "../../src/utils/types/githubRepos"
+import ProdRepository from "../../src/utils/types/prodRepo"
 
-export const gitData: Repository[]  = [{
+export const gitData: ProdRepository[]  = [{
  allow_forking: true,
   archive_url: "https://api.github.com/repos/octocat/hello-world/{archive_format}{/ref}",
   archived: false,

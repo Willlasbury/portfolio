@@ -1,8 +1,9 @@
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import RepoLanguages from '@/utils/types/githubRepoLang'
 
 type PieChartProps = {
-  data: { [key: string]: number }
+  data: RepoLanguages
 }
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8', '#82CA9D']
@@ -12,11 +13,6 @@ export default function DataPieChart({ data }: PieChartProps) {
   console.log("chartData:", chartData)
 
   return (
-    <Card className="w-full max-w-3xl">
-      <CardHeader>
-        <CardTitle>Data Distribution</CardTitle>
-      </CardHeader>
-      <CardContent>
         <ResponsiveContainer width="100%" height={400}>
           <PieChart>
             <Pie
@@ -37,8 +33,7 @@ export default function DataPieChart({ data }: PieChartProps) {
             <Legend />
           </PieChart>
         </ResponsiveContainer>
-      </CardContent>
-    </Card>
+     
   )
 }
 

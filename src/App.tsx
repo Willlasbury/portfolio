@@ -6,13 +6,28 @@ import Projects from './components/Projects'
 import Footer from './components/Footer'
 import getGithub from './utils/api/getGithub/getGithub'
 import { useState, useEffect } from 'react'
-import Repository from './utils/types/githubRepos'
+import ProdRepository from './utils/types/prodRepo'
+import getRepoLanguages from './utils/api/getGithub/getRepoLangs'
 
 export default function App() {
-  const [projects, setProjects] = useState<Array<Repository> | undefined>(undefined);
+  const [projects, setProjects] = useState<ProdRepository[]>();
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => { 
-    getGithub().then((data) => {
+  useEffect(() => {
+    getGithub().then((repos) => {
+      const newRepo: ProdRepository[] = repos.map(repo => {
+        getRepoLanguages(repo.languages_url).then(data => {
+          console.log("data:", data)
+          return { ...repo, languages: data } as ProdRepository
+          
+        })
+        return repo as ProdRepository
+      })
+      console.log("newRepos:", newRepo)
+      return newRepo
+    }
+    ).then((data) => {
+
       setProjects(data)
     })
 
@@ -21,14 +36,14 @@ export default function App() {
   const test = () => {
     console.log("projects:", projects)
   }
-  
+
   return (
     <div className="min-h-screen flex flex-col">
       <button onClick={test}>fdsafdsa</button>
       <Header />
       <main className="flex-grow">
         <Hero />
-        {projects && <Projects projects={projects} />}
+        <Projects projects={projects} />
       </main>
       <Footer />
     </div>
