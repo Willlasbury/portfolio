@@ -1,7 +1,8 @@
 import filterRepos from "./filterRepos";
 import Repository from "@/utils/types/githubRepos";
 import getRepoLanguages from "./getRepoLangs";
-// import RepoLanguages from "@/utils/types/githubRepoLang";
+
+const token = import.meta.env.GITHUBACCESSTOKEN
 
 export default async function getGithub(): Promise<Array<Repository>> {
   try {
@@ -10,7 +11,7 @@ export default async function getGithub(): Promise<Array<Repository>> {
     const res = await fetch(url, {
       method: "GET",
       headers: {
-        'Authorization': `Bearer ${}`
+        'Authorization': token
       }
     });
 
@@ -21,9 +22,11 @@ export default async function getGithub(): Promise<Array<Repository>> {
 
       // use the languages_url to attach languages to repo
       repos.map(async (repo) => {
-        const lan_data = await getRepoLanguages(repo.languages_url)
-        
+        const lang_data = await getRepoLanguages(repo.languages_url, token)
+        repo['languages'] = lang_data
       })
+
+      return repos
     } else {
       throw new Error(`${res.statusText} ${await res.text()}`);
     }

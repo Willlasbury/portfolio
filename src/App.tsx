@@ -16,7 +16,6 @@ export default function App() {
       setProjects(data)
     })
 
-    
   }, [])
 
   const test = () => {

@@ -45,6 +45,7 @@ type Repository = {
     keys_url: string;
     labels_url: string;
     language: string;
+    languages?: {[key: string] : number};
     languages_url: string;
     license: License;
     merges_url: string;

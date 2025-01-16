@@ -1,8 +1,12 @@
 import RepoLanguages from "@/utils/types/githubRepoLang";
 
-export default async function getRepoLanguages (url: string): Promise<RepoLanguages> {
+export default async function getRepoLanguages (url: string, token: string): Promise<RepoLanguages> {
     try {
-        const res = await fetch(url)
+        const res = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Authorization': token
+              }        })
         
         if (res.ok) {
             const data = res.json()
