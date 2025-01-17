@@ -5,21 +5,21 @@ import ProdRepository from "@/utils/types/prodRepo"
 
 type Props = {
  projects: ProdRepository[]
- isLoading: boolean
 }
 
-export default function Projects({ projects, isLoading }: Props) {
+export default function Projects({ projects }: Props) {
   // console.log("projects:", projects)
-  // setTimeout(() => {
-  //   console.log("projects[0].languages:", projects[0].languages)
+  setTimeout(() => {
+    console.log("projects[0].languages:", projects[0].languages)
 
-  // }, 1000)
+  }, 1000)
+
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects && projects.map((project, index) => (
             <Card key={index}>
               <CardHeader>
                 <CardTitle>{project.name}</CardTitle>
