@@ -4,15 +4,10 @@ import DataPieChart from "./PieChart"
 import ProdRepository from "@/utils/types/prodRepo"
 
 type Props = {
- projects: ProdRepository[]
+ projects: ProdRepository[] | undefined
 }
 
 export default function Projects({ projects }: Props) {
-  // console.log("projects:", projects)
-  setTimeout(() => {
-    console.log("projects[0].languages:", projects[0].languages)
-
-  }, 1000)
 
   return (
     <section id="projects" className="py-20">
