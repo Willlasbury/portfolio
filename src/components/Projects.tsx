@@ -24,7 +24,7 @@ export default function Projects({ projects }: Props) {
                 <div className="flex flex-wrap gap-2">
                   <p>Languages:</p>
                   <ul>
-                    { project.languages && 
+                    {  
                       Object.entries(project.languages).map(([name, value])=>{
                         return (
                           <li key={name}>
