@@ -12,14 +12,16 @@ type ColorMapProps = {
 }
 
 export default function Projects({ projects }: Props) {
+
   const languageColorMap: ColorMapProps = {
-    JavaScript: "bg-yellow-400",  
-    Handlebars: "bg-yellow-500",  
-    HTML: "bg-red-600",           
-    CSS: "bg-blue-600",           
-    Python: "bg-blue-700",         
-    TypeScript: "bg-blue-600",     
+    JavaScript: "bg-yellow-400",
+    Handlebars: "bg-yellow-500",
+    HTML: "bg-red-600",
+    CSS: "bg-blue-600",
+    Python: "bg-blue-700",
+    TypeScript: "bg-blue-600",
   };
+
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto">
@@ -37,10 +39,9 @@ export default function Projects({ projects }: Props) {
                   <ul className="flex flex-row">
                     {
                       Object.entries(project.languages).map(([name, value]) => {
-                        console.log("languageColorMap[name]:", languageColorMap[name])
                         return (
                           <li key={name} className="pr-1">
-                            <Badge className={`${languageColorMap[name]}`} variant="secondary">{name}</Badge>
+                            <Badge className={`${languageColorMap[name]}` || 'bg-slate-400'} variant="secondary">{name}</Badge>
 
                           </li>
                         )
