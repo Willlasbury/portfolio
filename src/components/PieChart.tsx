@@ -1,32 +1,27 @@
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import RepoLanguages from '@/utils/types/githubRepoLang'
 
 type PieChartProps = {
   data: RepoLanguages
+  colorMap: {[key: string]: {[key:string]: string}}
 }
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8', '#82CA9D']
-
-export default function DataPieChart({ data }: PieChartProps) {
+export default function DataPieChart({ data, colorMap }: PieChartProps) {
   const chartData = Object.entries(data).map(([name, value]) => ({ name, value }))
-  console.log("chartData:", chartData)
-
   return (
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="100%" height={150}>
           <PieChart>
             <Pie
               data={chartData}
               cx="50%"
               cy="50%"
               labelLine={false}
-              outerRadius={150}
+              outerRadius={50}
               fill="#8884d8"
               dataKey="value"
-              label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
             >
-              {chartData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              {chartData.map(({name, value}) => (
+                <Cell key={`cell-${value}`} fill={colorMap[name]['hex']} />
               ))}
             </Pie>
             <Tooltip formatter={(value, name) => [`${value}`, `${name}`]} />

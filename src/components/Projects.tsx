@@ -8,19 +8,20 @@ type Props = {
 }
 
 type ColorMapProps = {
-  [key: string]: string
+  [key: string]: {[key:string]: string}
 }
 
 export default function Projects({ projects }: Props) {
 
   const languageColorMap: ColorMapProps = {
-    JavaScript: "bg-yellow-400",
-    Handlebars: "bg-yellow-500",
-    HTML: "bg-red-600",
-    CSS: "bg-blue-600",
-    Python: "bg-blue-700",
-    TypeScript: "bg-blue-600",
-  };
+    JavaScript: {hex: "#F7DF1E", tw: 'bg-yellow-400'},
+    Handlebars: {hex:"#F1C40F",tw: 'bg-yellow-500'},
+    HTML:{ hex:"#E34F26", tw: 'bg-red-600'},
+    CSS: {hex:"#1572B6",tw: 'bg-blue-600'},
+    Python: {hex:"#306998",tw: 'bg-blue-700'},
+    TypeScript: {hex:"#3178C6",tw: 'bg-blue-600'},
+    Procfile: {hex: '#00000', tw: 'bg-black'}
+  }
 
   return (
     <section id="projects" className="py-20">
@@ -38,10 +39,10 @@ export default function Projects({ projects }: Props) {
                   <p>Languages:</p>
                   <ul className="flex flex-row">
                     {
-                      Object.entries(project.languages).map(([name, value]) => {
+                      Object.entries(project.languages).map(([lang, value]) => {
                         return (
-                          <li key={name} className="pr-1">
-                            <Badge className={`${languageColorMap[name]}` || 'bg-slate-400'} variant="secondary">{name}</Badge>
+                          <li key={lang} className="pr-1">
+                            <Badge className={`${languageColorMap[lang]['tw']}` || 'bg-slate-400'} variant="secondary">{lang}</Badge>
 
                           </li>
                         )
@@ -49,7 +50,7 @@ export default function Projects({ projects }: Props) {
                     }
                   </ul>
                 </div>
-                {/* {project.language && <DataPieChart data={project.languages} /> } */}
+                {project.language && <DataPieChart data={project.languages} colorMap={languageColorMap}/> }
               </CardContent>
               <CardFooter>
                 <a href={project.deployments_url} className="text-blue-500 hover:underline">View Project</a>
