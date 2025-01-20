@@ -1,6 +1,6 @@
-import Repository from "../../src/utils/types/githubRepos"
+import ProdRepository from "../../src/utils/types/prodRepo"
 
-export const gitData: Repository[]  = [{
+export const gitData: ProdRepository[]  = [{
  allow_forking: true,
   archive_url: "https://api.github.com/repos/octocat/hello-world/{archive_format}{/ref}",
   archived: false,
@@ -47,6 +47,7 @@ export const gitData: Repository[]  = [{
   keys_url: "https://api.github.com/repos/octocat/hello-world/keys{/key_id}",
   labels_url: "https://api.github.com/repos/octocat/hello-world/labels{/name}",
   language: "TypeScript",
+  languages:{JavaScript:1200, TypeScript:600, CSS:300},
   languages_url: "https://api.github.com/repos/octocat/hello-world/languages",
   license: {
     key: "mit",
@@ -153,6 +154,7 @@ export const gitData: Repository[]  = [{
      keys_url: "https://api.github.com/repos/octocat/hello-world/keys{/key_id}",
      labels_url: "https://api.github.com/repos/octocat/hello-world/labels{/name}",
      language: "TypeScript",
+     languages:{JavaScript:1200, Python:600, CSS:300},
      languages_url: "https://api.github.com/repos/octocat/hello-world/languages",
      license: {
        key: "mit",
@@ -259,6 +261,7 @@ export const gitData: Repository[]  = [{
      keys_url: "https://api.github.com/repos/octocat/hello-world/keys{/key_id}",
      labels_url: "https://api.github.com/repos/octocat/hello-world/labels{/name}",
      language: "TypeScript",
+     languages:{Pascal:1200, Ruby:600, HTML:300},
      languages_url: "https://api.github.com/repos/octocat/hello-world/languages",
      license: {
        key: "mit",

@@ -6,29 +6,37 @@ import Projects from './components/Projects'
 import Footer from './components/Footer'
 import getGithub from './utils/api/getGithub/getGithub'
 import { useState, useEffect } from 'react'
-import Repository from './utils/types/githubRepos'
+import ProdRepository from './utils/types/prodRepo'
+import getRepoLanguages from './utils/api/getGithub/getRepoLangs'
+import { GridLoader } from 'react-spinners'
 
 export default function App() {
-  const [projects, setProjects] = useState<Array<Repository> | undefined>(undefined);
+  const [projects, setProjects] = useState<ProdRepository[]>();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  useEffect(() => { 
-    getGithub().then((data) => {
-      setProjects(data)
-    })
-
+  useEffect(() => {
+   const fetchRepoData = async () => {
+    const repos = await getGithub()
+    for (let i = 0; i < repos.length; i++) {
+      const data = await getRepoLanguages(repos[i].languages_url)
+      repos[i] = {...repos[i], languages: data} as ProdRepository
+    }
+    setProjects(repos as ProdRepository[])
+    setIsLoading(false)
+   }
+   fetchRepoData()
   }, [])
 
-  const test = () => {
-    console.log("projects:", projects)
-  }
-  
+
+
   return (
     <div className="min-h-screen flex flex-col">
-      <button onClick={test}>fdsafdsa</button>
       <Header />
       <main className="flex-grow">
         <Hero />
-        {projects && <Projects projects={projects} />}
+        {isLoading ? <GridLoader /> :
+        <Projects projects={projects} />
+      }
       </main>
       <Footer />
     </div>

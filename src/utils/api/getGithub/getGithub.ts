@@ -1,6 +1,5 @@
 import filterRepos from "./filterRepos";
 import Repository from "@/utils/types/githubRepos";
-import getRepoLanguages from "./getRepoLangs";
 
 const token = import.meta.env.GITHUBACCESSTOKEN
 
@@ -21,12 +20,9 @@ export default async function getGithub(): Promise<Array<Repository>> {
       const repos = filterRepos(data);
 
       // use the languages_url to attach languages to repo
-      repos.map(async (repo) => {
-        const lang_data = await getRepoLanguages(repo.languages_url, token)
-        repo['languages'] = lang_data
-      })
+      
+      return repos as Repository[]
 
-      return repos
     } else {
       throw new Error(`${res.statusText} ${await res.text()}`);
     }
