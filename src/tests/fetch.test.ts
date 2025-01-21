@@ -1,6 +1,5 @@
 import {
   expect,
-  expectTypeOf,
   test,
   beforeAll,
   afterEach,

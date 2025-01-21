@@ -1,5 +1,4 @@
 import Repository from "../../../utils/types/githubRepos"
-import ProdRepository from "../../../utils/types/prodRepo"
 
 export const gitData: Repository[]  = [{
  allow_forking: true,

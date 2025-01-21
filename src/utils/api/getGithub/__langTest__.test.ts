@@ -8,7 +8,6 @@ import {
 import getGithub from "./getGithub";
 import getRepoLanguage from "./getRepoLangs";
 import { server } from "@/tests/mock/server";
-import { gitData } from "@/tests/mock/fakeData/githubRepo";
 import { repoLanguageData } from "../../../tests/mock/fakeData/repoLanguages";
 // setup server
 // Establish API mocking before all tests.
