@@ -35,8 +35,6 @@ export default function DataPieChart({ data, colorMap }: PieChartProps) {
       startAngle,
       endAngle,
       fill,
-      payload,
-      percent,
       value
     } = props;
     const sin = Math.sin(-RADIAN * midAngle);
