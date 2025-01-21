@@ -1,7 +1,7 @@
+import { useCallback, useState } from 'react'
 import { PieChart, Pie, Cell, Sector, ResponsiveContainer } from 'recharts'
 import RepoLanguages from '@/utils/types/githubRepoLang'
-import { useCallback, useState } from 'react'
-import { ChartData } from '../utils/types/pieChartProps'
+import { ChartData } from '@/utils/types/pieChartProps'
 
 type PieChartProps = {
   data: RepoLanguages
