@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell, Tooltip, Sector, ResponsiveContainer } from 'recharts'
+import { PieChart, Pie, Cell, Sector, ResponsiveContainer } from 'recharts'
 import RepoLanguages from '@/utils/types/githubRepoLang'
 import { useCallback, useState } from 'react'
 import { ChartData } from '../utils/types/pieChartProps'
