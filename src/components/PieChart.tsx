@@ -1,6 +1,8 @@
 import { PieChart, Pie, Cell, Tooltip, Sector, ResponsiveContainer } from 'recharts'
 import RepoLanguages from '@/utils/types/githubRepoLang'
 import { useCallback, useState } from 'react'
+import { ChartData } from '../utils/types/pieChartProps'
+
 type PieChartProps = {
   data: RepoLanguages
   colorMap: { [key: string]: { [key: string]: string } }
@@ -49,9 +51,6 @@ export default function DataPieChart({ data, colorMap }: PieChartProps) {
   
     return (
       <g>
-        {/* <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
-          {payload.name}
-        </text> */}
         <Sector
           cx={cx}
           cy={cy}
@@ -82,29 +81,20 @@ export default function DataPieChart({ data, colorMap }: PieChartProps) {
           textAnchor={textAnchor}
           fill="#333"
         >{`${calculatePercent(value, valueSum)}`}</text>
-        {/* <text
-          x={ex + (cos >= 0 ? 1 : -1) * 12}
-          y={ey}
-          dy={18}
-          textAnchor={textAnchor}
-          fill="#999"
-        >
-          {`(Rate ${(percent * 100).toFixed(2)}%)`}
-        </text> */}
       </g>
     );
   };
 
   const [activeIndex, setActiveIndex] = useState<number| undefined>(undefined);
   const onPieEnter = useCallback(
-    (_, index:number) => {
+    (_:ChartData, index: number) => {
       setActiveIndex(index);
     },
     [setActiveIndex]
   );
 
   const onPieLeave = useCallback(
-    (_, index: number) => {
+    () => {
       setActiveIndex(undefined)
     }, [setActiveIndex]
     
@@ -131,8 +121,6 @@ export default function DataPieChart({ data, colorMap }: PieChartProps) {
             <Cell key={`cell-${value}`} fill={colorMap[name]['hex']} />
           ))}
         </Pie>
-        {/* <Tooltip formatter={(value, name) => [calculatePercent(value as number, valueSum), `${name}`]} /> */}
-        {/* <Legend /> */}
       </PieChart>
     </ResponsiveContainer>
 
