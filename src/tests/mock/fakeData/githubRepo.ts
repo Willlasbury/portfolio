@@ -1,6 +1,7 @@
-import ProdRepository from "../../src/utils/types/prodRepo"
+import Repository from "../../../utils/types/githubRepos"
+import ProdRepository from "../../../utils/types/prodRepo"
 
-export const gitData: ProdRepository[]  = [{
+export const gitData: Repository[]  = [{
  allow_forking: true,
   archive_url: "https://api.github.com/repos/octocat/hello-world/{archive_format}{/ref}",
   archived: false,
@@ -47,8 +48,8 @@ export const gitData: ProdRepository[]  = [{
   keys_url: "https://api.github.com/repos/octocat/hello-world/keys{/key_id}",
   labels_url: "https://api.github.com/repos/octocat/hello-world/labels{/name}",
   language: "TypeScript",
-  languages:{JavaScript:1200, TypeScript:600, CSS:300},
-  languages_url: "https://api.github.com/repos/octocat/hello-world/languages",
+  // languages:{JavaScript:1200, TypeScript:600, CSS:300},
+  languages_url: "https://api.github.com/repos/octocat/hello-world/languages0",
   license: {
     key: "mit",
     name: "MIT License",
@@ -154,8 +155,8 @@ export const gitData: ProdRepository[]  = [{
      keys_url: "https://api.github.com/repos/octocat/hello-world/keys{/key_id}",
      labels_url: "https://api.github.com/repos/octocat/hello-world/labels{/name}",
      language: "TypeScript",
-     languages:{JavaScript:1200, Python:600, CSS:300},
-     languages_url: "https://api.github.com/repos/octocat/hello-world/languages",
+    //  languages:{JavaScript:1200, Python:600, CSS:300},
+     languages_url: "https://api.github.com/repos/octocat/hello-world/languages1",
      license: {
        key: "mit",
        name: "MIT License",
@@ -261,8 +262,8 @@ export const gitData: ProdRepository[]  = [{
      keys_url: "https://api.github.com/repos/octocat/hello-world/keys{/key_id}",
      labels_url: "https://api.github.com/repos/octocat/hello-world/labels{/name}",
      language: "TypeScript",
-     languages:{Pascal:1200, Ruby:600, HTML:300},
-     languages_url: "https://api.github.com/repos/octocat/hello-world/languages",
+    //  languages:{Pascal:1200, Ruby:600, HTML:300},
+     languages_url: "https://api.github.com/repos/octocat/hello-world/languages2",
      license: {
        key: "mit",
        name: "MIT License",

@@ -6,9 +6,9 @@ import {
   afterEach,
   afterAll,
 } from "vitest";
-import getGithub from "../src/utils/api/getGithub/getGithub";
+import getGithub from "../utils/api/getGithub/getGithub";
 import { server } from "./mock/server";
-import { gitData } from "./mock/fakeData";
+import { gitData } from "./mock/fakeData/githubRepo";
 
 // setup server
 // Establish API mocking before all tests.
@@ -24,5 +24,7 @@ afterAll(() => server.close());
 // check that git hub fetch works
 test("Fetch some repositories from github", async () => {
   const data = await getGithub();
+  // only the third repo is tagged as portfolio
+  // this checks the filter function built into getGithub
   expect(data).toEqual([gitData[2]]);
 });

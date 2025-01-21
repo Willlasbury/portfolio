@@ -2,7 +2,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import DataPieChart from "./PieChart"
 import ProdRepository from "@/utils/types/prodRepo"
-
 type Props = {
   projects: ProdRepository[] | undefined
 }
@@ -39,7 +38,7 @@ export default function Projects({ projects }: Props) {
                   <p>Languages:</p>
                   <ul className="flex flex-row">
                     {
-                      Object.entries(project.languages).map(([lang, value]) => {
+                      Object.entries(project.languages).map(([lang, ]) => {
                         return (
                           <li key={lang} className="pr-1">
                             <Badge className={`${languageColorMap[lang]['tw']}` || 'bg-slate-400'} variant="secondary">{lang}</Badge>
