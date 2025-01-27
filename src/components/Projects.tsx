@@ -23,10 +23,10 @@ export default function Projects({ projects }: Props) {
   }
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-5">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 className="text-3xl font-bold mb-2 text-center">My Projects</h2>
+        <div className="grid grid-cols-1 px-1 h-96 overflow-y-scroll no-scrollbar md:grid-cols-2 md:48rem md:overflow-y-scroll lg:grid-cols-3 gap-8">
           {projects && projects.map((project, index) => (
             <Card key={index}>
               <CardHeader>
