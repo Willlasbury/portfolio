@@ -23,7 +23,7 @@ export default function App() {
       setProjects(repos as ProdRepository[])
       setIsLoading(false)
     }
-    //  fetchRepoData()
+     fetchRepoData()
   }, [])
 
 
