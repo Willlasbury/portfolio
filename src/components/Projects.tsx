@@ -33,7 +33,7 @@ export default function Projects({ projects, isLoading }: Props) {
           <GridLoader />
         </div>
         :
-        <div className="justify-items-center grid grid-cols-1 px-1 h-96 overflow-y-scroll no-scrollbar md:grid-cols-2 md:48rem md:overflow-y-scroll lg:grid-cols-3 gap-8">
+        <div className="justify-items-center grid grid-cols-1 px-1 h-96 overflow-y-scroll no-scrollbar lg:grid-cols-2 md:48rem md:overflow-y-scroll xl:grid-cols-3 gap-8">
           {projects && projects.map((project, index) => (
             <Card key={index}>
               <CardHeader>

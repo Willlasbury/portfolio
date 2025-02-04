@@ -41,7 +41,7 @@ export default function DataPieChart({ data, colorMap }: PieChartProps) {
     const cos = Math.cos(-RADIAN * midAngle);
     const sx = cx + (outerRadius + 10) * cos;
     const sy = cy + (outerRadius + 10) * sin;
-    const mx = cx + (outerRadius + 30) * cos;
+    const mx = cx + (outerRadius + 20) * cos;
     const my = cy + (outerRadius + 13) * sin;
     const ex = mx + (cos >= 0 ? 1 : -1) * 22;
     const ey = my;
