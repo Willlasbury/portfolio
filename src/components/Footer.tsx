@@ -1,12 +1,18 @@
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-gray-800 text-white py-8">
+    <footer id="contact" className="bg-gray-800 text-white py-4 rounded-t-md">
       <div className="container mx-auto text-center">
-        <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-        <p className="mb-4">Feel free to reach out for collaborations or just a friendly hello</p>
-        <p>Email: your.email@example.com</p>
-        <p>GitHub: <a href="https://github.com/yourusername" className="text-blue-400 hover:underline">github.com/yourusername</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" className="text-blue-400 hover:underline">linkedin.com/in/yourusername</a></p>
+        <ul className="flex flex-row justify-between">
+          <li>
+            <p>Email: asburyw229@gmail.com</p>
+          </li>
+          <li>
+            <p >GitHub: <a target="_blank" href="https://github.com/willlasbury" className="text-blue-400 hover:underline">github.com/willlasbury</a></p>
+          </li>
+          <li>
+            <p>LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/william-asbury-2613a824b/" className="text-blue-400 hover:underline">linkedin.com/in/william-asbury-2613a824b/e</a></p>
+          </li>
+        </ul>
       </div>
     </footer>
   )
