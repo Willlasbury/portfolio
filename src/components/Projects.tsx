@@ -25,15 +25,15 @@ export default function Projects({ projects, isLoading }: Props) {
   }
 
   return (
-    <section id="projects" className="flex flex-col flex-grow items-center py-1">
-      <h2 className="text-3xl font-bold mb-2 text-center">My Projects</h2>
+    <section id="projects" className="flex flex-col flex-grow items-center py-1 max-h-[500px]">
+      <h2 className="h-1/6 text-3xl font-bold mb-2 text-center">My Projects</h2>
 
       {isLoading ?
-        <div className="flex flex-grow items-center">
+        <div className=" h-5/6 flex flex-grow items-center">
           <GridLoader />
         </div>
         :
-        <div className="justify-items-center grid grid-cols-1 px-1 h-96 overflow-y-scroll no-scrollbar lg:grid-cols-2 md:48rem md:overflow-y-scroll xl:grid-cols-3 gap-8">
+        <div className="h-5/6 justify-items-center grid grid-cols-1 px-1 overflow-y-scroll no-scrollbar lg:grid-cols-2 lg:min-h-[500px] md:48rem md:overflow-y-scroll xl:grid-cols-3 gap-8">
           {projects && projects.map((project, index) => (
             <Card key={index}>
               <CardHeader>
