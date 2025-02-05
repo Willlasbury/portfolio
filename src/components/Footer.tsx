@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer id="contact" className="bg-gray-800 text-white py-4 rounded-t-md">
       <div className="container mx-auto text-center">
-        <ul className="flex flex-row justify-between flex-col">
+        <ul className="flex justify-between flex-col">
           <li>
             <p>Email: asburyw229@gmail.com</p>
           </li>
