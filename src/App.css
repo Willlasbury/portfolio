@@ -4,3 +4,33 @@
   text-align: center;
 }
 
+
+
+#modal-about section {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#modal-about section h2 {
+  color: #333;
+  border-bottom: 2px solid #f4f4f4;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+#modal-about section p {
+  margin: 10px 0;
+}
+#modal-about ul {
+  list-style-type: none;
+  padding: 0;
+}
+#modal-about ul li {
+  margin: 8px 0;
+}
+#modal-about .contact-info {
+  font-style: italic;
+  margin-bottom: 20px;
+}
