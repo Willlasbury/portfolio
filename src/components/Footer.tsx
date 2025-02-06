@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-gray-800 text-white py-4 rounded-t-md">
+    <footer id="contact" className="bg-gray-800 text-white py-4 rounded-t-md z-10">
       <div className="container mx-auto text-center">
         <ul className="flex justify-between flex-col">
           <li>
