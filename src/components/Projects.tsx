@@ -37,8 +37,8 @@ export default function Projects({ projects, isLoading }: Props) {
           {projects && projects.map((project, index) => (
             <Card key={index}>
               <CardHeader>
-                <CardTitle>{project.name}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
+                <CardTitle>{project.description}</CardTitle>
+                <CardDescription><b>Github Repo: </b>{project.name}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
