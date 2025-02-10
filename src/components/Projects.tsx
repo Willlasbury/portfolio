@@ -38,7 +38,7 @@ export default function Projects({ projects, isLoading }: Props) {
             <Card key={index}>
               <CardHeader>
                 <CardTitle>{project.description}</CardTitle>
-                <CardDescription><b>Github Repo: </b>{project.name}</CardDescription>
+                <CardDescription><b>Github Repo: </b><a target={"_blank"} href={project.html_url}>{project.name}</a></CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -59,7 +59,9 @@ export default function Projects({ projects, isLoading }: Props) {
                 {project.language && <DataPieChart data={project.languages} colorMap={languageColorMap} />}
               </CardContent>
               <CardFooter>
-                <a href={project.deployments_url} className="text-blue-500 hover:underline">View Project</a>
+                {project.homepage &&
+                <a target={"_blank"} href={project.homepage} className="text-blue-500 hover:underline">View Deploymnet</a>
+                }
               </CardFooter>
             </Card>
           ))}
