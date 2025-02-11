@@ -18,10 +18,10 @@ export default function Projects({ projects, isLoading }: Props) {
     JavaScript: { hex: "#F7DF1E", tw: 'bg-yellow-400' },
     Handlebars: { hex: "#F1C40F", tw: 'bg-yellow-500' },
     HTML: { hex: "#E34F26", tw: 'bg-red-600' },
-    CSS: { hex: "#1572B6", tw: 'bg-blue-600' },
-    Python: { hex: "#306998", tw: 'bg-blue-700' },
+    CSS: { hex: "#0F766E", tw: 'bg-teal-600' },
+    Python: { hex: "#10B981", tw: 'bg-emerald-500' },
     TypeScript: { hex: "#3178C6", tw: 'bg-blue-600' },
-    Procfile: { hex: '#00000', tw: 'bg-black' }
+    Procfile: { hex: '#10B981', tw: 'bg-green-500' }
   }
 
   return (
@@ -41,7 +41,7 @@ export default function Projects({ projects, isLoading }: Props) {
                 <CardDescription><b>Github Repo: </b><a target={"_blank"} href={project.html_url}>{project.name}</a></CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex gap-2">
                   <p>Languages:</p>
                   <ul className="flex flex-row max-w-64 overflow-x-scroll no-scrollbar">
                     {
