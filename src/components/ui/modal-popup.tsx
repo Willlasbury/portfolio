@@ -25,6 +25,14 @@ export default function ModalPopup() {
           </DialogHeader>
           <div id='modal-about' className="grid gap-4 py-4 overflow-y-scroll no-scrollbar">
             <section>
+              <h2>Quick about this page</h2>
+              <p>
+                This is my portfolio page. While I created this to have a streamlined experience with clear examples of my skills, I have used this page as an example of some key skills I want to show off.
+               </p>
+                <p>
+                  This page uses Github's API to pull in my repositories, filter and sort them, and display them in a clean and easy to read format. Along with this, I have built a test suite to maintaine functionality as I grow this page.
+                </p>
+                <p></p>
               <h2>About Me</h2>
               <p>
                 I’ve spent the past few years transitioning into a programming career after realizing that my previous work in chemical manufacturing no longer aligned with my values and long-term goals. My journey began with building on the basic programming skills I learned in college, and I committed to deepening my knowledge by pursuing a Full Stack Web Development certificate from the University of Washington. This program allowed me to focus on both front-end and back-end technologies, strengthening my ability to build robust, scalable web applications.
