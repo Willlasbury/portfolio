@@ -25,7 +25,7 @@ export default function Projects({ projects, isLoading }: Props) {
   }
 
   return (
-    <section id="projects" className="flex flex-col flex-grow items-center py-1 max-h-[500px]">
+    <section id="projects" className="flex flex-col flex-grow items-center py-1 max-h-[500px] lg:max-h-[1000px]">
       <h2 className="h-1/6 text-3xl font-bold mb-2 text-center">My Projects</h2>
 
       {isLoading ?
