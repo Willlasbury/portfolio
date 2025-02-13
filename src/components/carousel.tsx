@@ -26,7 +26,14 @@ export const Carousel: React.FC<CarouselProps> = ({ children }) => {
 
   return (
     <div className="relative">
-      <div className="overflow-hidden">
+      <div className="flex overflow-hidden">
+      <button
+        onClick={prev}
+        className="absolute z-10 left-2 top-6 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
         <div
           className="flex transition-transform duration-300 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -39,15 +46,8 @@ export const Carousel: React.FC<CarouselProps> = ({ children }) => {
         </div>
       </div>
       <button
-        onClick={prev}
-        className="absolute left-2 top-6 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      <button
         onClick={next}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
+        className="absolute z-10 right-2 top-6 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
         aria-label="Next slide"
       >
         <ChevronRight className="w-6 h-6" />
