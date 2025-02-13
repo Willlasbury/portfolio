@@ -20,7 +20,7 @@ interface CarouselProps {
   renderBottomContent?: (currentIndex: number) => React.ReactNode
 }
 
-export const Carousel: React.FC<CarouselProps> = ({ children, renderBottomContent }) => {
+export const Carousel: React.FC<CarouselProps> = ({ children }) => {
   const items = React.Children.toArray(children)
   const { currentIndex, next, prev } = useCarousel(items.length)
 
@@ -52,7 +52,6 @@ export const Carousel: React.FC<CarouselProps> = ({ children, renderBottomConten
       >
         <ChevronRight className="w-6 h-6" />
       </button>
-      {renderBottomContent && <div className="mt-4">{renderBottomContent(currentIndex)}</div>}
     </div>
   )
 }
