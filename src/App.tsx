@@ -1,5 +1,7 @@
 import './App.css'
 
+import Resume from './components/Resume'
+import { Carousel } from './components/carousel'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
@@ -33,7 +35,11 @@ export default function App() {
       <Header />
       <main className="flex flex-col flex-grow">
         <Hero />
-        <Projects projects={projects} isLoading={isLoading} />
+        <Carousel>
+          <Projects projects={projects} isLoading={isLoading} />
+          <Resume />
+        
+      </Carousel>
       </main>
       <Footer />
     </div>
