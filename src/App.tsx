@@ -35,9 +35,9 @@ export default function App() {
       <Header />
       <main className="flex flex-col flex-grow">
         <Hero />
-      <Carousel>
-      <Resume />
-        <Projects projects={projects} isLoading={isLoading} />
+        <Carousel>
+          <Projects projects={projects} isLoading={isLoading} />
+          <Resume />
         
       </Carousel>
       </main>

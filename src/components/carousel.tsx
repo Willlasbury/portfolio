@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react"
+import React, { useState, useCallback } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const useCarousel = (itemCount: number) => {
@@ -23,15 +23,6 @@ interface CarouselProps {
 export const Carousel: React.FC<CarouselProps> = ({ children, renderBottomContent }) => {
   const items = React.Children.toArray(children)
   const { currentIndex, next, prev } = useCarousel(items.length)
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  if (!isMounted) {
-    return null
-  }
 
   return (
     <div className="relative">
@@ -49,7 +40,7 @@ export const Carousel: React.FC<CarouselProps> = ({ children, renderBottomConten
       </div>
       <button
         onClick={prev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
+        className="absolute left-2 top-6 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-6 h-6" />
