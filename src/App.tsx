@@ -38,7 +38,7 @@ export default function App() {
       setIsLoadingCW(false)
 
     }
-     fetchData()
+    fetchData()
   }, [])
 
 
@@ -52,8 +52,7 @@ export default function App() {
           <StatsDisplay data={codeWarsData} isLoadingCW={isLoadingCW} />
           <Projects projects={projects} isLoadingProjects={isLoadingProjects} />
           <Resume />
-        
-      </Carousel>
+        </Carousel>
       </main>
       <Footer />
     </div>

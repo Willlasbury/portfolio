@@ -15,24 +15,25 @@ export default function StatsDisplay({ data, isLoadingCW }: StatsDisplayProps) {
         return { language: lang.toUpperCase(), rank: obj.rank * -1, score: obj.score }
     })
     return (
-        <section className="">
+        <section className="flex flex-col justify-center items-center">
             <h2 className="h-1/6 text-3xl font-bold mb-2 text-center">Code Wars User Stats</h2>
             {isLoadingCW ? <GridLoader /> :
-                <div className="p-4">
+            <div className="flex justify-center items-center p-4 w-11/12 md:bg-pink-300">
 
-                    <RadarChart outerRadius="80%" data={formData}>
+                <ResponsiveContainer minWidth="100px" minHeight="260px">
+                    <RadarChart  outerRadius="80%" data={formData}>
                         <PolarGrid />
                         <PolarAngleAxis
-                            dataKey="language"
-                            //  dx={10}
-                            dy={-10}
-                        />
+                         dataKey="language" 
+                         //  dx={10}
+                         dy={-10}
+                         />
                         <PolarRadiusAxis
                             angle={90}
                             domain={[minValue, 8]}
                             reversed={true}
                             tickCount={maxValue - minValue + 2}
-                        />
+                            />
                         <Radar
                             name="CodeWarsRadialGraph"
                             dataKey="rank"
@@ -41,7 +42,8 @@ export default function StatsDisplay({ data, isLoadingCW }: StatsDisplayProps) {
                             fill="#8884d8"
                             fillOpacity={0.6} />
                     </RadarChart>
-                </div>
+                </ResponsiveContainer>
+                            </div>
             }
         </section>
     )

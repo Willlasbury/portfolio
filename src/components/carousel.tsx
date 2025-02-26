@@ -26,7 +26,7 @@ export const Carousel: React.FC<CarouselProps> = ({ children }) => {
 
   return (
     <div className="relative">
-      <div className="flex overflow-hidden">
+      <div className="flex overflow-hidden h-min">
       <button
         onClick={prev}
         className="absolute z-10 left-2 top-6 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
