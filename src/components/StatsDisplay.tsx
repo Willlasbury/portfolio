@@ -14,8 +14,6 @@ export default function StatsDisplay({ data, isLoadingCW }: StatsDisplayProps) {
     const formData = stats.map(([lang, obj]) => {
         return { language: lang.toUpperCase(), rank: obj.rank * -1, score: obj.score }
     })
-    console.log("maxValue, minValue:", maxValue, minValue)
-    console.log("maxValue-minValue:", maxValue-minValue)
     return (
         <section>
             {isLoadingCW ? <GridLoader /> :
