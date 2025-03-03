@@ -35,7 +35,7 @@ export const Carousel: React.FC<CarouselProps> = ({ children }) => {
         <ChevronLeft className="w-6 h-6" />
       </button>
         <div
-          className="flex transition-transform duration-300 ease-in-out"
+          className="flex flex-1 transition-transform duration-300 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {items.map((item, index) => (
