@@ -1,5 +1,5 @@
 import { GridLoader } from "react-spinners"
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Label } from 'recharts';
 import UserStats from "../utils/types/codeWarsData";
 
 type StatsDisplayProps = {
@@ -18,32 +18,33 @@ export default function StatsDisplay({ data, isLoadingCW }: StatsDisplayProps) {
         <section className="flex flex-col justify-center items-center">
             <h2 className="h-1/6 text-3xl font-bold mb-2 text-center">Code Wars User Stats</h2>
             {isLoadingCW ? <GridLoader /> :
-            <div className="flex justify-center items-center p-4 w-11/12 md:bg-pink-300">
+                <div className="flex justify-center items-center p-4 w-11/12 ">
 
-                <ResponsiveContainer minWidth="100px" minHeight="260px">
-                    <RadarChart  outerRadius="80%" data={formData}>
-                        <PolarGrid />
-                        <PolarAngleAxis
-                         dataKey="language" 
-                         //  dx={10}
-                         dy={-10}
-                         />
-                        <PolarRadiusAxis
-                            angle={90}
-                            domain={[minValue, 8]}
-                            reversed={true}
-                            tickCount={maxValue - minValue + 2}
+                    <ResponsiveContainer minWidth="100px" minHeight="260px">
+                        <RadarChart outerRadius="80%" data={formData}>
+                            <PolarGrid />
+                            <PolarAngleAxis
+                                dataKey="language"
+                                //  dx={10}
+                                // dy={-10}
                             />
-                        <Radar
-                            name="CodeWarsRadialGraph"
-                            dataKey="rank"
-                            label={'rank'}
-                            stroke="#8884d8"
-                            fill="#8884d8"
-                            fillOpacity={0.6} />
-                    </RadarChart>
-                </ResponsiveContainer>
-                            </div>
+                            <PolarRadiusAxis
+                                angle={90}
+                                cx={-100}
+                                domain={[minValue, 8]}
+                                reversed={true}
+                                tickCount={maxValue - minValue + 2}
+                            />
+                            <Radar
+                                name="CodeWarsRadialGraph"
+                                dataKey="rank"
+                                label={'rank'}
+                                stroke="#8884d8"
+                                fill="#8884d8"
+                                fillOpacity={0.6} />
+                        </RadarChart>
+                    </ResponsiveContainer>
+                </div>
             }
         </section>
     )
