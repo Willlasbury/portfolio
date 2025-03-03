@@ -1,5 +1,5 @@
 import { GridLoader } from "react-spinners"
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Label } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import UserStats from "../utils/types/codeWarsData";
 
 type StatsDisplayProps = {
