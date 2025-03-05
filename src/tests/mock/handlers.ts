@@ -8,7 +8,6 @@ export const handlers = [
   http.get("https://api.github.com/users/willlasbury/repos", () => {
     return HttpResponse.json(gitData);
   }),
-
   // get language data 
   http.get("https://api.github.com/repos/octocat/hello-world/languages0", () => {
     return HttpResponse.json(repoLanguageData[0])
@@ -19,4 +18,9 @@ export const handlers = [
   http.get("https://api.github.com/repos/octocat/hello-world/languages2", () => {
     return HttpResponse.json(repoLanguageData[2])
   }),
+
+  // get leetCode data
+  http.post("https://leetcode.com/graphql", () => {
+    return HttpResponse.json({"hello": "world"})
+  })
 ];
