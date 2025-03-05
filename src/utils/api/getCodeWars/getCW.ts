@@ -1,4 +1,7 @@
-export default async function getCW() {
+import { storedCWdata } from "../../../tests/mock/fakeData/cwData";
+import UserStats from "../../types/codeWarsData";
+
+export default async function getCW(): Promise<UserStats> {
     try {
         const url = 'https://www.codewars.com/api/v1/users/Willlasbury'
         const res = await fetch(url);
@@ -14,6 +17,6 @@ export default async function getCW() {
           // TODO
           console.log(err);
         }
-        return [];
+        return storedCWdata
       }
     }

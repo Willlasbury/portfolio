@@ -10,7 +10,7 @@ export default function Footer() {
             <p >GitHub: <a target="_blank" href="https://github.com/willlasbury" className="text-blue-400 hover:underline">github.com/willlasbury</a></p>
           </li>
           <li>
-            <p>LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/william-asbury-2613a824b/" className="text-blue-400 hover:underline">linkedin.com/in/william-asbury-2613a824b/e</a></p>
+            <p>LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/william-asbury-2613a824b/" className="text-blue-400 hover:underline">linkedin.com/in/william-asbury-2613a824b/</a></p>
           </li>
         </ul>
       </div>

@@ -5,14 +5,14 @@ import ProdRepository from "@/utils/types/prodRepo"
 import { GridLoader } from "react-spinners"
 type Props = {
   projects: ProdRepository[] | undefined
-  isLoading: boolean
+  isLoadingProjects: boolean
 }
 
 type ColorMapProps = {
   [key: string]: { [key: string]: string },
 }
 
-export default function Projects({ projects, isLoading }: Props) {
+export default function Projects({ projects, isLoadingProjects }: Props) {
 
   const languageColorMap: ColorMapProps = {
     JavaScript: { hex: "#F7DF1E", tw: 'bg-yellow-400' },
@@ -28,7 +28,7 @@ export default function Projects({ projects, isLoading }: Props) {
     <section id="projects" className="flex flex-col flex-grow items-center py-1 max-h-[500px] lg:max-h-[1000px]">
       <h2 className="h-1/6 text-3xl font-bold mb-2 text-center">My Projects</h2>
 
-      {isLoading ?
+      {isLoadingProjects ?
         <div className=" h-5/6 flex flex-grow items-center">
           <GridLoader />
         </div>
