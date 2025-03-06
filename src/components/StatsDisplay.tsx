@@ -16,7 +16,7 @@ export default function StatsDisplay({ data, isLoadingCW }: StatsDisplayProps) {
     })
     return (
         <section className="flex flex-col justify-center items-center">
-            <h2 className="h-1/6 text-3xl font-bold mb-2 text-center">Code Wars User Stats</h2>
+            <h2 className="h-1/6 text-3xl font-bold mb-2 text-center">Various User Stats</h2>
             {isLoadingCW ? <GridLoader /> :
                 <div className="flex justify-center items-center p-4 w-11/12 ">
 

@@ -15,12 +15,15 @@ import ProdRepository from './utils/types/prodRepo'
 import getRepoLanguages from './utils/api/getGithub/getRepoLangs'
 import UserStats from './utils/types/codeWarsData'
 import { storedCWdata } from './tests/mock/fakeData/cwData'
+import { storedLeetData } from './tests/mock/fakeData/leetData'
 
 export default function App() {
   const [projects, setProjects] = useState<ProdRepository[]>();
   const [isLoadingProjects, setIsLoadingProjects] = useState<boolean>(true);
   const [codeWarsData, setCodeWarsData] = useState<UserStats>(storedCWdata);
   const [isLoadingCW, setIsLoadingCW] = useState(true);
+  const [leetData, setLeetData] = useState(storedLeetData);
+  const [isLoadingLeet, setIsLoadingLeet] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
