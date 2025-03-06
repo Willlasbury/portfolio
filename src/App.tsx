@@ -23,7 +23,6 @@ export default function App() {
   const [codeWarsData, setCodeWarsData] = useState<UserStats>(storedCWdata);
   const [isLoadingCW, setIsLoadingCW] = useState(true);
   const [leetData, setLeetData] = useState(storedLeetData);
-  const [isLoadingLeet, setIsLoadingLeet] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,7 +51,7 @@ export default function App() {
       <main className="flex flex-col flex-grow">
         <Hero />
         <Carousel>
-          <StatsDisplay data={codeWarsData} isLoadingCW={isLoadingCW} />
+          <StatsDisplay data={codeWarsData} isLoadingCW={isLoadingCW} leetData={leetData}/>
           <Projects projects={projects} isLoadingProjects={isLoadingProjects} />
           <Resume />
         </Carousel>
