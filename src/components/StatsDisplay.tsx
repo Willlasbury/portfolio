@@ -1,5 +1,4 @@
 import { GridLoader } from "react-spinners"
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import UserStats from "../utils/types/codeWarsData";
 import LeetCodeStats from "./dataCharts/leetCode"; 
 import CodeWarsStats from "./dataCharts/codeWars";
@@ -11,13 +10,6 @@ type StatsDisplayProps = {
 }
 
 export default function StatsDisplay({ data, isLoadingCW, leetData }: StatsDisplayProps) {
-    const stats = Object.entries(data.ranks.languages)
-    const maxValue = Math.max(...stats.map(([_, obj]) => obj.rank * -1))
-    const minValue = Math.min(...stats.map(([_, obj]) => obj.rank * -1))
-    const formData = stats.map(([lang, obj]) => {
-        return { language: lang.toUpperCase(), rank: obj.rank * -1, score: obj.score }
-    })
-    
 
     return (
         <section className="flex flex-col justify-center items-center">

@@ -1,4 +1,4 @@
-import { ResponsiveContainer, Funnel, FunnelChart, Tooltip, TooltipProps, CartesianGrid, YAxis, LabelList } from 'recharts';
+import { ResponsiveContainer, Funnel, FunnelChart, Tooltip, TooltipProps, LabelList } from 'recharts';
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 
 
@@ -12,6 +12,25 @@ const CustomTooltip = ({ active, payload }: TooltipProps<ValueType, NameType>) =
     }
 }
 
+const CustomLabel = (props: any) => {
+    console.log("props:", props)
+    const styleProps = {
+        fill: props.fill,
+        height: props.height,
+        textAnchor: 'middle',
+        width: props.width,
+        viewBox: props.viewBox,
+        x: props.x + props.width / 2,
+        y: props.y + props.height / 2,
+    };
+    
+    // Apparently the key can not be added through the spread operator
+    return (
+        <text key={props.index} {...styleProps} onMouseEnter={props.onMouseEnter}>
+            {props.value} {props.count}
+        </text>
+    );
+}
 
 export default function LeetCodeStats({ leetData }: any) {
 
@@ -26,24 +45,7 @@ export default function LeetCodeStats({ leetData }: any) {
         return obj.count != 0
     })
 
-    const CustomLabel = (props: any) => {
-        const styleProps = {
-            fill: props.fill,
-            height: props.height,
-            textAnchor: 'middle',
-            width: props.width,
-            viewBox: props.viewBox,
-            x: props.x + props.width / 2,
-            y: props.y + props.height / 2,
-        };
-        
-        // Apparently the key can not be added through the spread operator
-        return (
-            <text key={props.index} {...styleProps}>
-                {props.value}
-            </text>
-        );
-    }
+    
     return (
 
         <div className="flex flex-col justify-center items-center p-4 w-11/12 ">
@@ -54,13 +56,12 @@ export default function LeetCodeStats({ leetData }: any) {
                     <Funnel
                         dataKey="count"
                         data={displayedLeetData}
-                        isAnimationActive
+                        
 
                     >
                         <LabelList dataKey="difficulty" position={'center'} fill='black'
                          content={<CustomLabel />}
                          />
-                        {/* <YAxis dataKey="difficulty" type="category" width={100} axisLine={false} tickLine={false} /> */}
                     </Funnel>
 
                 </FunnelChart>
