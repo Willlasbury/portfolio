@@ -11,20 +11,21 @@ import StatsDisplay from './components/StatsDisplay'
 
 import getGithub from './utils/api/getGithub/getGithub'
 import getCW from './utils/api/getCodeWars/getCW'
-import getLeetData from './utils/api/getLeetCode/getLeetCode'
+// import getLeetData from './utils/api/getLeetCode/getLeetCode'
 import ProdRepository from './utils/types/prodRepo'
 import getRepoLanguages from './utils/api/getGithub/getRepoLangs'
 import UserStats from './utils/types/codeWarsData'
 import { storedCWdata } from './tests/mock/fakeData/cwData'
 import { storedLeetData } from './tests/mock/fakeData/leetData'
-import { StoredLeetData } from './utils/types/leetCodeData'
+// import { StoredLeetData } from './utils/types/leetCodeData'
 
 export default function App() {
   const [projects, setProjects] = useState<ProdRepository[]>();
   const [isLoadingProjects, setIsLoadingProjects] = useState<boolean>(true);
   const [codeWarsData, setCodeWarsData] = useState<UserStats>(storedCWdata);
   const [isFetching, setIsFetching] = useState(true);
-  const [leetData, setLeetData] = useState<StoredLeetData>(storedLeetData);
+  // const [leetData, setLeetData] = useState<StoredLeetData>(storedLeetData);
+  const leetData = storedLeetData
 
   useEffect(() => {
     const fetchData = async () => {

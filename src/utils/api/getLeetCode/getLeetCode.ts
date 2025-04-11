@@ -1,6 +1,6 @@
 import {query, variables} from './userquery'
 import { StoredLeetData } from '../../types/leetCodeData';
-import { storedLeetData } from '../../../tests/mock/fakeData/leetData';
+// import { storedLeetData } from '../../../tests/mock/fakeData/leetData';
 
 export default function getLeetData():Promise<StoredLeetData> {
     return fetch('https://leetcode.com/graphql', {

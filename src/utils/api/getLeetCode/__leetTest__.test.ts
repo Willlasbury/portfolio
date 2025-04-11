@@ -1,7 +1,7 @@
 import { expect, it, beforeAll, afterEach, afterAll } from "vitest";
 import getLeetCode from "./getLeetCode";
 import { server } from "@/tests/mock/server";
-import { leetData } from "../../../tests/mock/fakeData/leetData";
+// import { leetData } from "../../../tests/mock/fakeData/leetData";
 import { describe } from "node:test";
 describe("Test leetCode fetches", () => {
   // setup server
