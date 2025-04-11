@@ -3,7 +3,6 @@ import UserStats from "../../utils/types/codeWarsData"
 
 type StatsDisplayProps = {
     data: UserStats
-    isLoadingCW: boolean
     leetData: any
 }
 

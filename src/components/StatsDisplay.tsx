@@ -5,20 +5,20 @@ import CodeWarsStats from "./dataCharts/codeWars";
 
 type StatsDisplayProps = {
     data: UserStats
-    isLoadingCW: boolean
+    isFetching: boolean
     leetData: any
 }
 
-export default function StatsDisplay({ data, isLoadingCW, leetData }: StatsDisplayProps) {
+export default function StatsDisplay({ data, isFetching, leetData }: StatsDisplayProps) {
 
     return (
         <section className="flex flex-col justify-center items-center">
             <h2 className="h-1/6 text-3xl font-bold mb-2 text-center">Various User Stats</h2>
             {/* TODO: replace isloading stuff with <Suspense> https://react.dev/reference/react/Suspense */}
-            {isLoadingCW ? <GridLoader /> :
-                <div className="flex justify-center items-center p-4 w-11/12 ">
+            {isFetching ? <GridLoader /> :
+                <div className="flex flex-col justify-center items-center p-4 w-11/12 md:flex-row ">
                     <LeetCodeStats leetData={leetData} />
-                    <CodeWarsStats data={data} isLoadingCW={isLoadingCW} leetData={leetData} />
+                    <CodeWarsStats data={data} leetData={leetData} />
                 </div>
             }
         </section>

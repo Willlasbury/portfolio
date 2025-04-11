@@ -11,18 +11,20 @@ import StatsDisplay from './components/StatsDisplay'
 
 import getGithub from './utils/api/getGithub/getGithub'
 import getCW from './utils/api/getCodeWars/getCW'
+import getLeetData from './utils/api/getLeetCode/getLeetCode'
 import ProdRepository from './utils/types/prodRepo'
 import getRepoLanguages from './utils/api/getGithub/getRepoLangs'
 import UserStats from './utils/types/codeWarsData'
 import { storedCWdata } from './tests/mock/fakeData/cwData'
 import { storedLeetData } from './tests/mock/fakeData/leetData'
+import { StoredLeetData } from './utils/types/leetCodeData'
 
 export default function App() {
   const [projects, setProjects] = useState<ProdRepository[]>();
   const [isLoadingProjects, setIsLoadingProjects] = useState<boolean>(true);
   const [codeWarsData, setCodeWarsData] = useState<UserStats>(storedCWdata);
-  const [isLoadingCW, setIsLoadingCW] = useState(true);
-  const [leetData, setLeetData] = useState(storedLeetData);
+  const [isFetching, setIsFetching] = useState(true);
+  const [leetData, setLeetData] = useState<StoredLeetData>(storedLeetData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,10 +36,16 @@ export default function App() {
       }
       setProjects(repos as ProdRepository[])
       setIsLoadingProjects(false)
+      // get leet code data
+      // const leetData = await getLeetData()
 
       const data = await getCW()
+
       setCodeWarsData(data)
-      setIsLoadingCW(false)
+      // setLeetData(leetData)
+      setIsFetching(false)
+      
+      
 
     }
     fetchData()
@@ -51,7 +59,7 @@ export default function App() {
       <main className="flex flex-col flex-grow">
         <Hero />
         <Carousel>
-          <StatsDisplay data={codeWarsData} isLoadingCW={isLoadingCW} leetData={leetData}/>
+          <StatsDisplay data={codeWarsData} isFetching={isFetching} leetData={leetData}/>
           <Projects projects={projects} isLoadingProjects={isLoadingProjects} />
           <Resume />
         </Carousel>
