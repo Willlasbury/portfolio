@@ -13,7 +13,7 @@ const CustomTooltip = ({ active, payload }: TooltipProps<ValueType, NameType>) =
 }
 
 const CustomLabel = (props: any) => {
-    console.log("props:", props)
+    
     const styleProps = {
         fill: props.fill,
         height: props.height,
